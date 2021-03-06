@@ -1,4 +1,5 @@
 # app.py to run covid API
+# created by Russell on 3/6/21
 
 from covid_package.api.get_country_data import get_country_data
 from covid_package.api.get_country_keys import get_country_key_mappings
