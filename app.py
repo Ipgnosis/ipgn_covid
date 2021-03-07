@@ -1,6 +1,7 @@
 # app.py to run covid API
 # created by Russell on 3/6/21
 
+from covid_package.api.get_latest_date import get_latest_date
 from covid_package.api.get_country_data import get_country_data
 from covid_package.api.get_country_keys import get_country_key_mappings
 from covid_package.api.home import home_screen
@@ -50,6 +51,14 @@ def country_route():
         return get_country_data(data, iso_code)
     else:
         return get_country_key_mappings(data)
+
+
+# poll for latest data to validate data update service
+
+@app.route('/latest_data')
+def date_check_route():
+    # return package.get_country_records(data, key_list)
+    return get_latest_date(data, key_list)
 
 
 if __name__ == '__main__':
