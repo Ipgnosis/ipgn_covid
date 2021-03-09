@@ -1,10 +1,35 @@
-    The source of this data is Our World in Data (http://www.ourworldindata.org) which is a project based at the Oxford Martin School at the University of Oxford.
+Overview
 
-    The full data can be downloaded from https://ourworldindata.org/coronavirus-source-data in either .json, .csv or .xlsx format.
+The source of this data is Our World in Data (http://www.ourworldindata.org) which is a project based at the Oxford Martin School at the University of Oxford, UK.
 
-    For each country that data exists, the followind data *may* be available:
-    
-    The key is iso_code: a 3 letter, uppercase string (except see below) corresponding to a country:
+The full data can be downloaded from https://ourworldindata.org/coronavirus-source-data in either .json, .csv or .xlsx format.
+
+
+Data Structure
+
+Dict - dict - list - dict
+
+{
+    "iso-code" : {
+        key: value  (see 'Level 1' list below - up to 17 pairs, plus "data")
+        "data": [
+            {
+                "date": string, iso format (YYYY-MM-DD),
+                key: value  (see 'Level 2' list below - up to 41 pairs, including "date")
+            }
+        ]
+    }
+}
+
+
+Level 0 data:
+
+A set of key:value pairs.  The key is iso_code: a 3 letter, uppercase string (see below) corresponding to a country.
+
+
+Level 1 data:
+
+For each iso_code (country) key that exists, the values are contained in a dictionary.  The dict contains key:values that *may* be available:
 
     continent
     location
@@ -23,10 +48,14 @@
     hospital_beds_per_thousand
     life_expectancy
     human_development_index
+    data
     
-    For each date that data exists for a given country, the following data *may* be available:
+    
+Level 2 data:
 
-    The attribute 'date' is a string in iso format (YYYY-MM-DD).
+The Level 1 key 'data' has a value which is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
+
+The attribute 'date' is a string in iso format (YYYY-MM-DD).
     
     date
     total_cases
@@ -167,7 +196,7 @@ KGZ	        Asia	        Kyrgyzstan
 KHM	        Asia	        Cambodia
 KNA	        North America	Saint Kitts and Nevis
 KOR	        Asia	        South Korea
-KOS	        Europe	        Kosovo  (see note below)
+KOS	        Europe	        Kosovo  (artificial iso_code - see note below)
 KWT	        Asia	        Kuwait
 LAO	        Asia	        Laos
 LBN	        Asia	        Lebanon
@@ -273,8 +302,6 @@ Note that in the OWID data, Kosovo has a special iso_code (below).  So for consi
 
 OWID_KOS	Europe	        Kosovo
 
-Note also that the iso_code for 'the World' that will be exluded for the time being:
+Note also that the iso_code for 'the World' that will be exluded from the api for the time being, but can be aggregated if required:
 
 OWID_WRL	World           None
-
-

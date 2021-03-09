@@ -10,7 +10,7 @@ from covid_package.classes.Exception_class import InvalidUsage
 import os
 import sys
 from flask import Flask, request, jsonify
-#from flask_swagger import swagger
+from flask_swagger import swagger
 
 CURRENT_DIR = os.path.dirname(__file__)
 sys.path.append(CURRENT_DIR)
@@ -46,6 +46,7 @@ def default_route():
     # return package.get_country_records(data, key_list)
     return home_screen()
 
+
 # register the error handler
 
 
@@ -55,14 +56,14 @@ def handle_invalid_usage(error):
     response.status_code = error.status_code
     return response
 
+
 # the swagger doc route
 
 
-"""
 @app.route('/spec')
 def spec():
     return jsonify(swagger(app))
-"""
+
 
 # the country api
 
