@@ -1,6 +1,6 @@
 # output key information on available data by country
 
-from ..libs.aggregate_data import count_daily_records, fetch_date_range
+from covid_package.libs.aggregate_data import count_daily_records, fetch_date_range
 
 
 def get_country_records(this_data, list_of_keys):

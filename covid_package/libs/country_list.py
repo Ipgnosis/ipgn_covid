@@ -1,16 +1,5 @@
 # extract country keys and country names from json
 
-#  compiles a list of distinct country keys, excluding aggregations
-def fetch_keys(this_data):
-
-    key_list = []
-
-    for key in this_data.keys():
-        if str(key)[0:3] != "OWI":
-            key_list.append(key)
-
-    return key_list
-
 # compiles a list of distinct countries, excluding aggregations
 
 
