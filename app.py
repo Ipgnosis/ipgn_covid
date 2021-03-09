@@ -24,7 +24,6 @@ DATA_FILE = os.path.join(CURRENT_DIR, 'data', FILE_NAME)
 # create the Flask app
 app = Flask(__name__)
 
-
 # read the data file from the data dir
 data = read_data(DATA_FILE)
 
@@ -71,7 +70,11 @@ def spec():
 @app.route('/country')
 def country_route():
 
-    iso_code = request.args.get('iso')
+    if request.args.get('iso'):
+        iso_code = request.args.get('iso')
+    else:
+        raise InvalidUsage(
+            'This resource does not exist - check documentation', status_code=404)
 
     if iso_code in iso_list:
         return get_country_data(data, iso_code)
@@ -88,7 +91,11 @@ def country_route():
 @app.route('/level1')
 def level_1_route():
 
-    req_keys_list = request.args.get('keys').split(',')
+    if request.args.get('keys'):
+        req_keys_list = request.args.get('keys').split(',')
+    else:
+        raise InvalidUsage(
+            'This resource does not exist - check documentation', status_code=404)
 
     if valid_fields(req_keys_list, l1_keys):
         return get_level_1_data(data, iso_list, req_keys_list)
@@ -104,7 +111,11 @@ def level_1_route():
 # split out the key and the data api
 def level_2_route():
 
-    req_keys_list = request.args.get('keys').split(',')
+    if request.args.get('keys'):
+        req_keys_list = request.args.get('keys').split(',')
+    else:
+        raise InvalidUsage(
+            'This resource does not exist - check documentation', status_code=404)
 
     if valid_fields(req_keys_list, l2_keys):
         return get_l2_keys_data(data, iso_list, req_keys_list)
