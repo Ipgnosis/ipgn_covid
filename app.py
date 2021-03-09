@@ -2,7 +2,7 @@
 # created by Russell on 3/6/21
 
 from covid_package.api.get_latest_date import get_latest_date
-from covid_package.api.get_country_data import get_country_data, get_level_1_data, get_l2_keys_data, get_l2_date_data
+from covid_package.api.get_country_data import get_country_data, get_level_1_data, get_l2_keys_data
 from covid_package.api.home import home_screen
 from covid_package.libs.store_data import read_data
 from covid_package.libs.valid_keys import fetch_l0_keys, fetch_l1_keys, fetch_l2_keys, valid_fields
@@ -10,7 +10,7 @@ from covid_package.classes.Exception_class import InvalidUsage
 import os
 import sys
 from flask import Flask, request, jsonify
-from flask_swagger import swagger
+#from flask_swagger import swagger
 
 CURRENT_DIR = os.path.dirname(__file__)
 sys.path.append(CURRENT_DIR)
@@ -59,10 +59,11 @@ def handle_invalid_usage(error):
 # the swagger doc route
 
 
+"""
 @app.route('/spec')
 def spec():
     return jsonify(swagger(app))
-
+"""
 
 # the country api
 
