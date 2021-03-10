@@ -57,7 +57,7 @@ def get_l2_keys_data(this_data, these_keys, req_keys):
 # the level 2 date api
 
 
-def get_l2_date_data(this_data, these_keys, req_date):
+def get_l2_date_data(this_data, these_keys, this_date):
 
     return_dict = dict()
 
@@ -65,7 +65,7 @@ def get_l2_date_data(this_data, these_keys, req_date):
         country_dict = dict()
         country_list = []
         for day in range(len(this_data[iso]['data'])):
-            if day['date'] == req_date:
+            if this_data[iso]['data'][day]['date'] == this_date:
                 country_list.append(this_data[iso]['data'][day])
 
             country_dict['data'] = country_list

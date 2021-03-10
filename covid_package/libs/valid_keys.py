@@ -1,6 +1,10 @@
 #  generates list of keys at all 3 levels
 
+from datetime import datetime
+
 #  compiles a list of distinct country keys, excluding aggregations
+
+
 def fetch_l0_keys(this_data):
 
     key_list = []
@@ -50,3 +54,32 @@ def valid_fields(these_fields, these_keys):
             return False
 
     return True
+
+
+# validate a date
+def valid_date(this_date):
+
+    format = '%Y-%m-%d'
+    try:
+        datetime.strptime(this_date, format)
+        return True
+    except:
+        return False
+
+# convert a date string to a datetime
+
+
+def strptime_date(this_date_str):
+
+    format = '%Y-%m-%d'
+
+    return datetime.strptime(this_date_str, format)
+
+
+# convert a strptime to a strftime
+
+
+def strftime_date(this_date):
+
+    format = '%Y-%m-%d'
+    return datetime.strftime(this_date, format)

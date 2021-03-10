@@ -1,11 +1,12 @@
 # app.py to run covid API
 # created by Russell on 3/6/21
 
+from covid_package.libs.aggregate_data import fetch_latest_data_date
 from covid_package.api.get_latest_date import get_latest_date
-from covid_package.api.get_country_data import get_country_data, get_level_1_data, get_l2_keys_data
+from covid_package.api.get_country_data import get_country_data, get_level_1_data, get_l2_keys_data, get_l2_date_data
 from covid_package.api.home import home_screen
 from covid_package.libs.store_data import read_data
-from covid_package.libs.valid_keys import fetch_l0_keys, fetch_l1_keys, fetch_l2_keys, valid_fields
+from covid_package.libs.valid_keys import fetch_l0_keys, fetch_l1_keys, fetch_l2_keys, valid_fields, valid_date, strptime_date, strftime_date
 from covid_package.classes.Exception_class import InvalidUsage
 import os
 import sys
@@ -66,6 +67,7 @@ def spec():
 
 
 # the country api
+# returns all data for a given iso_code (param = iso)
 
 
 @app.route('/country')
@@ -85,6 +87,7 @@ def country_route():
 
 
 # the level 1 api
+# returns specified attributes for all countries (param = keys)
 # NOTE THAT level 1 data does NOT include the key 'data'
 # the key 'data' is deemed to be the key for level 2 data
 
@@ -106,9 +109,10 @@ def level_1_route():
 
 
 # the level 2 api
+# returns specified attributes for all countries, all dates (param = keys)
 
 
-@app.route('/level2')
+@app.route('/level2/keys')
 # split out the key and the data api
 def level_2_route():
 
@@ -124,8 +128,36 @@ def level_2_route():
         raise InvalidUsage(
             'One or more parameters do not exist - check documentation', status_code=404)
 
+# the level 2 api
+# returns specified attributes for all countries on a specific date (param = date)
 
-# poll for latest data to validate data update service
+
+@app.route('/level2/date')
+# split out the key and the data api
+def level_2_date_route():
+
+    if request.args.get('date'):
+        req_date = request.args.get('date')
+    else:
+        raise InvalidUsage(
+            'This resource does not exist - check documentation', status_code=404)
+
+    if valid_date(req_date):
+        datetime_req_date = strptime_date(req_date)
+        latest_data = fetch_latest_data_date(data, iso_list)
+        datetime_latest_data = strptime_date(latest_data)
+        if datetime_req_date > datetime_latest_data:
+            raise InvalidUsage(
+                'No data for that date.', status_code=404)
+        else:
+            corrected_req_date = strftime_date(datetime_req_date)
+            return get_l2_date_data(data, iso_list, corrected_req_date)
+    else:
+        raise InvalidUsage(
+            'Invalid date error - check documentation', status_code=404)
+
+
+# returns latest data date to validate data update service
 
 
 @app.route('/latest_data')

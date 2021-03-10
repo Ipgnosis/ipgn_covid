@@ -294,14 +294,24 @@ YEM	        Asia	        Yemen
 ZAF	        Africa	        South Africa
 ZMB	        Africa	        Zambia
 ZWE	        Africa	        Zimbabwe
+None        None            International   (excluded from data - see note below)
+
+The last country (International) is a catch-all bucket for cases that are not assignable to a specific country. 
+
+iso_code    continent	    location
 None        None            International
 
-The last country (International) is a catch-all bucket for cases that are not assignable to a specific country.  Note that the 'iso_code' and 'continent' are None.
+Since 'iso_code' is None (Null), this data has been exluded for the time being.
+The data currently comprises:
+    total_cases < 1,000
+    total_deaths < 20. 
 
 Note that in the OWID data, Kosovo has a special iso_code (below).  So for consistency (see above), an artificial iso_code = KOS has been assigned to this data.
 
+iso_code    continent	    location
 OWID_KOS	Europe	        Kosovo
 
 Note also that the iso_code for 'the World' that will be exluded from the api for the time being, but can be aggregated if required:
 
+iso_code    continent	    location
 OWID_WRL	World           None
