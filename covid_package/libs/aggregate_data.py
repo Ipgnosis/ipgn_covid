@@ -76,6 +76,10 @@ def get_country_summary(this_data, this_country):
 
 def main():
 
+    import sys
+
+    sys.path.append("c:\\Users\\Ipgnosis\\Documents\\Github\\ipgn_covid")
+
     agg_test_data = {
         "AFG": {"population": 38928341.0,
                 "data": [{"date": "2020-09-01", "new_cases": 1}, {"date": "2020-09-02", "new_cases": 1}, {"date": "2020-09-03", "new_cases": 1}]

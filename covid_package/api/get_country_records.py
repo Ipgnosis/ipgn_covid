@@ -20,8 +20,13 @@ def get_country_records(this_data, list_of_keys):
 
 
 def main():
-    from ..libs.store_data import read_data
-    from ..libs.country_list import fetch_keys
+
+    import sys
+
+    sys.path.append("c:\\Users\\Ipgnosis\\Documents\\Github\\ipgn_covid")
+
+    from covid_package.libs.store_data import read_data
+    from covid_package.libs.country_list import fetch_keys
 
     # read the data file from the data dir
     data = read_data()

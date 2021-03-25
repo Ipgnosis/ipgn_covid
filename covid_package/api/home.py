@@ -1,7 +1,6 @@
 # home page output
 
 def home_screen():
-    # return "Hello tosh, gotta Toshiba?"
 
     output_text = """The source of this data is Our World in Data (http://www.ourworldindata.org) which is a project based at the Oxford Martin School at the University of Oxford\n
     The full data can be downloaded from https: // ourworldindata.org/coronavirus-source-data\n

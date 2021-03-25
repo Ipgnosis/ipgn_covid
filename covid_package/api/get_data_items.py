@@ -29,6 +29,10 @@ def get_data_items(this_data, iso_list, param_list):
 
 def main():
 
+    import sys
+
+    sys.path.append("c:\\Users\\Ipgnosis\\Documents\\Github\\ipgn_covid")
+
     from covid_package.libs.store_data import read_data
 
     # read the data file from the data dir

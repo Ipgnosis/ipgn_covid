@@ -1,6 +1,5 @@
 #  outputs data for a country, based on a country key
 
-from covid_package.libs.store_data import read_data
 import json
 
 # the country api

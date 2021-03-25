@@ -16,9 +16,6 @@ from flask_swagger import swagger
 CURRENT_DIR = os.path.dirname(__file__)
 sys.path.append(CURRENT_DIR)
 
-COVID_PACKAGE = os.path.join(CURRENT_DIR, 'covid_package')
-sys.path.append(COVID_PACKAGE)
-
 FILE_NAME = 'owid-covid-data.json'
 DATA_FILE = os.path.join(CURRENT_DIR, 'data', FILE_NAME)
 
@@ -70,7 +67,7 @@ def spec():
 # returns all data for a given iso_code (param = iso)
 
 
-@app.route('/country')
+@app.route('/country', methods=['GET'])
 def country_route():
 
     if request.args.get('iso'):
@@ -92,7 +89,7 @@ def country_route():
 # the key 'data' is deemed to be the key for level 2 data
 
 
-@app.route('/level1')
+@app.route('/level1', methods=['GET'])
 def level_1_route():
 
     if request.args.get('keys'):
@@ -112,7 +109,7 @@ def level_1_route():
 # returns specified attributes for all countries, all dates (param = keys)
 
 
-@app.route('/level2/keys')
+@app.route('/level2/keys', methods=['GET'])
 # split out the key and the data api
 def level_2_route():
 
@@ -132,7 +129,7 @@ def level_2_route():
 # returns specified attributes for all countries on a specific date (param = date)
 
 
-@app.route('/level2/date')
+@app.route('/level2/date', methods=['GET'])
 # split out the key and the data api
 def level_2_date_route():
 
@@ -160,7 +157,7 @@ def level_2_date_route():
 # returns latest data date to validate data update service
 
 
-@app.route('/latest_data')
+@app.route('/latest_data', methods=['GET'])
 def date_check_route():
     # return package.get_country_records(data, key_list)
     return get_latest_date(data, iso_list)

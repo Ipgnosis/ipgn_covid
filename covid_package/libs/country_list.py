@@ -16,6 +16,12 @@ def fetch_countries(this_data):
 
 def main():
 
+    import sys
+
+    sys.path.append("c:\\Users\\Ipgnosis\\Documents\\Github\\ipgn_covid")
+
+    from covid_package.libs.valid_keys import fetch_l0_keys
+
     country_test_data = {
         "AFG": {"location": "Afghanistan"},
         "OWID_WRL": {"location": "World"},
@@ -25,7 +31,7 @@ def main():
 
     print("Testing get_country_list.py:")
 
-    country_keys = fetch_keys(country_test_data)
+    country_keys = fetch_l0_keys(country_test_data)
 
     print("Key list = ", country_keys)
 
