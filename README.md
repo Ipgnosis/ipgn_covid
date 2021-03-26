@@ -108,11 +108,9 @@ With corresponding attributes of continent and location:
 
 <table>
 <th>
-<tr>
 <td>iso_code</td>
 <td>continent</td>
 <td>location</td>
-</tr>
 </th>
 <tr>
 <td>AFG</td>
