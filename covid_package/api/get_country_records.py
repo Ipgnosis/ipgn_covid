@@ -5,7 +5,7 @@ from covid_package.libs.aggregate_data import count_daily_records, fetch_date_ra
 
 def get_country_records(this_data, list_of_keys):
 
-    return_str = ""
+    return_str = str
 
     for iso in list_of_keys:
 

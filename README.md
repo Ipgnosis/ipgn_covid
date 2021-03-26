@@ -1,11 +1,13 @@
-Overview
+# National Covid Data API
+
+## Overview
 
 The source of this data is Our World in Data (http://www.ourworldindata.org) which is a project based at the Oxford Martin School at the University of Oxford, UK.
 
 The full data can be downloaded from https://ourworldindata.org/coronavirus-source-data in either .json, .csv or .xlsx format.
 
 
-Data Structure
+## Data Structure
 
 Dict - dict - list - dict
 
@@ -22,12 +24,12 @@ Dict - dict - list - dict
 }
 
 
-Level 0 data:
+## Level 0 data:
 
 A set of key:value pairs.  The key is iso_code: a 3 letter, uppercase string (see below) corresponding to a country.
 
 
-Level 1 data:
+## Level 1 data:
 
 For each iso_code (country) key that exists, the values are contained in a dictionary.  The dict contains key:values that *may* be available:
 
@@ -51,7 +53,7 @@ For each iso_code (country) key that exists, the values are contained in a dicti
     data
     
     
-Level 2 data:
+## Level 2 data:
 
 The Level 1 key 'data' has a value which is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
 
@@ -99,18 +101,21 @@ The attribute 'date' is a string in iso format (YYYY-MM-DD).
     new_vaccinations_smoothed_per_million
     stringency_index
 
-ISO Country codes with corresponding attributes of continent and location:
+
+## ISO Country codes
+
+With corresponding attributes of continent and location:
 
 iso_code    continent	    location
 
-AFG	        Asia	        Afghanistan
-AGO	        Africa	        Angola
-ALB	        Europe	        Albania
-AND	        Europe	        Andorra
-ARE	        Asia	        United Arab Emirates
-ARG	        South America	Argentina
-ARM	        Asia	        Armenia
-ATG	        North America	Antigua and Barbuda
+AFG	        Asia	        Afghanistan\n
+AGO	        Africa	        Angola\n
+ALB	        Europe	        Albania\n
+AND	        Europe	        Andorra\n
+ARE	        Asia	        United Arab Emirates\n
+ARG	        South America	Argentina\n
+ARM	        Asia	        Armenia\n
+ATG	        North America	Antigua and Barbuda\n
 AUS	        Oceania	        Australia
 AUT	        Europe	        Austria
 AZE	        Asia	        Azerbaijan
