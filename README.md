@@ -106,9 +106,24 @@ The attribute 'date' is a string in iso format (YYYY-MM-DD).
 
 With corresponding attributes of continent and location:
 
+<table>
+<th>
+<tr>
+<td>iso_code</td>
+<td>continent</td>
+<td>location</td>
+</tr>
+</th>
+<tr>
+<td>AFG</td>
+<td>Asia</td>
+<td>Afghanistan</td>
+</tr>
+</table>
+
 iso_code    continent	    location
 
-AFG	        Asia	        Afghanistan\n
+	        	        
 AGO	        Africa	        Angola\n
 ALB	        Europe	        Albania\n
 AND	        Europe	        Andorra\n
