@@ -107,11 +107,11 @@ The attribute 'date' is a string in iso format (YYYY-MM-DD).
 With corresponding attributes of continent and location:
 
 <table>
-<th>
-<td>iso_code</td>
-<td>continent</td>
-<td>location</td>
-</th>
+<tr>
+<th>iso_code</th>
+<th>continent</th>
+<th>location</th>
+</tr>
 <tr>
 <td>AFG</td>
 <td>Asia</td>
