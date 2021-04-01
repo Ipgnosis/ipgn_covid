@@ -32,73 +32,87 @@ A set of key:value pairs.  The key is iso_code: a 3 letter, uppercase string (se
 
 For each iso_code (country) key that exists, the values are contained in a dictionary.  The dict contains key:values that *may* be available:
 
-    continent
-    location
-    population
-    population_density
-    median_age
-    aged_65_older
-    aged_70_older
-    gdp_per_capita
-    extreme_poverty
-    cardiovasc_death_rate
-    diabetes_prevalence
-    female_smokers
-    male_smokers
-    handwashing_facilities
-    hospital_beds_per_thousand
-    life_expectancy
-    human_development_index
-    data
+<table>
+<tr>
+<th>resource</th><th>data type</th>
+</tr>
+<tr>
+<td>continent</td><td>string</td>
+<td>location</td><td>string</td>
+<td>population</td><td></td>
+<td>population_density</td><td>float</td>
+<td>median_age</td><td>float</td>
+<td>aged_65_older</td><td>float</td>
+<td>aged_70_older</td><td>float</td>
+<td>gdp_per_capita</td><td>float</td>
+<td>extreme_poverty</td><td>float</td>
+<td>cardiovasc_death_rate</td><td>float</td>
+<td>diabetes_prevalence</td><td>float</td>
+<td>handwashing_facilities</td><td>float</td>
+<td>hospital_beds_per_thousand</td><td>float</td>
+<td>life_expectancy</td><td>float</td>
+<td>human_development_index</td><td>float</td>
+<td>female_smokers</td><td>float</td>
+<td>male_smokers</td><td>float</td>
+<td>data</td><td>list (see below)</td>
+</tr>
+</table>
 
 
 ## Level 2 data:
 
-The Level 1 key 'data' has a value which is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
+The value of the last Level 1 key **'data'** is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
 
 The attribute 'date' is a string in iso format (YYYY-MM-DD).
 
-    date
-    total_cases
-    new_cases
-    new_cases_smoothed
-    total_deaths
-    new_deaths
-    new_deaths_smoothed
-    total_cases_per_million
-    new_cases_per_million
-    new_cases_smoothed_per_million
-    total_deaths_per_million
-    new_deaths_per_million
-    new_deaths_smoothed_per_million
-    reproduction_rate
-    icu_patients
-    icu_patients_per_million
-    hosp_patients
-    hosp_patients_per_million
-    weekly_icu_admissions
-    weekly_icu_admissions_per_million
-    weekly_hosp_admissions
-    weekly_hosp_admissions_per_million
-    total_tests
-    new_tests
-    total_tests_per_thousand
-    new_tests_per_thousand
-    new_tests_smoothed
-    new_tests_smoothed_per_thousand
-    positive_rate
-    tests_per_case
-    tests_units
-    total_vaccinations
-    people_vaccinated
-    people_fully_vaccinated
-    new_vaccinations
-    new_vaccinations_smoothed
-    total_vaccinations_per_hundred
-    people_vaccinated_per_hundred
-    people_fully_vaccinated_per_hundred
-    new_vaccinations_smoothed_per_million
-    stringency_index
+<table>
+<tr>
+<th>resource</th><th>data type</th>
+</tr>
+<tr>
+<td>date</td><td>string</td>
+<td>total_cases</td><td>float</td>
+<td>new_cases</td><td>float</td>
+<td>new_cases_smoothed</td><td>float</td>
+<td>total_deaths</td><td>float</td>
+<td>new_deaths</td><td>float</td>
+<td>new_deaths_smoothed</td><td>float</td>
+<td>total_cases_per_million</td><td>float</td>
+<td>new_cases_per_million</td><td>float</td>
+<td>new_cases_smoothed_per_million</td><td>float</td>
+<td>total_deaths_per_million</td><td>float</td>
+<td>new_deaths_per_million</td><td>float</td>
+<td>new_deaths_smoothed_per_million</td><td>float</td>
+<td>reproduction_rate</td><td>float</td>
+<td>icu_patients</td><td>float</td>
+<td>icu_patients_per_million</td><td>float</td>
+<td>hosp_patients</td><td>float</td>
+<td>hosp_patients_per_million</td><td>float</td>
+<td>weekly_icu_admissions</td><td>float</td>
+<td>weekly_icu_admissions_per_million</td><td>float</td>
+<td>weekly_hosp_admissions</td><td>float</td>
+<td>weekly_hosp_admissions_per_million</td><td>float</td>
+<td>total_tests</td><td>float</td>
+<td>new_tests</td><td>float</td>
+<td>total_tests_per_thousand</td><td>float</td>
+<td>new_tests_per_thousand</td><td>float</td>
+<td>new_tests_smoothed</td><td>float</td>
+<td>new_tests_smoothed_per_thousand</td><td>float</td>
+<td>positive_rate</td><td>float</td>
+<td>tests_per_case</td><td>float</td>
+<td>tests_units</td><td>string</td>
+<td>total_vaccinations</td><td>float</td>
+<td>people_vaccinated</td><td>float</td>
+<td>people_fully_vaccinated</td><td>float</td>
+<td>new_vaccinations</td><td>float</td>
+<td>new_vaccinations_smoothed</td><td>float</td>
+<td>total_vaccinations_per_hundred</td><td>float</td>
+<td>people_vaccinated_per_hundred</td><td>float</td>
+<td>people_fully_vaccinated_per_hundred</td><td>float</td>
+<td>new_vaccinations_smoothed_per_million</td><td>float</td>
+<td>stringency_index</td><td>float</td>
+</tr>
+</table>
 
 
 ## ISO Country codes
