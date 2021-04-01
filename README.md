@@ -43,7 +43,7 @@ For each iso_code (country) key that exists, the values are contained in a dicti
 <td>location</td><td>string</td>
 </tr>
 <tr>
-<td>population</td><td></td>
+<td>population</td><td>float</td>
 </tr>
 <tr>
 <td>population_density</td><td>float</td>
