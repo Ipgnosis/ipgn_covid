@@ -386,7 +386,7 @@ With corresponding attributes of continent and location:
 <td>KOR</td><td>Asia</td><td>South Korea</td>
 </tr>
 <tr>
-<td>KOS</td><td>Europe</td><td>Kosovo</td>
+<td>KOS</td><td>Europe</td><td>Kosovo (see note below)</td>
 </tr>
 <tr>
 <td>KWT</td><td>Asia</td><td>Kuwait</td>
