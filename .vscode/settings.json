@@ -33,5 +33,8 @@
     ],
     "appService.defaultWebAppToDeploy": "/subscriptions/1a0cb2b3-060f-4cb2-880b-da9736d752f7/resourceGroups/russell_rg_Linux_centralus/providers/Microsoft.Web/sites/ipgn-covid",
     "appService.deploySubpath": ".",
-    "python.pythonPath": "ipgn-covid\\Scripts\\python.exe"
+    "python.pythonPath": "ipgn-covid\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": false,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true
 }
