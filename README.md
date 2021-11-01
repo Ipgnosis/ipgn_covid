@@ -95,7 +95,7 @@ For each iso_code (country) key that exists, the values are contained in a dicti
 
 ## Level 2 data:
 
-The value of the last Level 1 key **'data'** is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
+The value of the last Level 1 key: **'data'** is a list of dictionaries.  Each dictionary contains data for a given date for which data exists - not all dates have data in all countries.  Each date dictionary *may* contain the attributes listed below:
 
 The attribute 'date' is a string in iso format (YYYY-MM-DD).
 
