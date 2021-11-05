@@ -1,4 +1,4 @@
-# build a table of the iso_code, continent, locatoin
+# build a table of the iso_code, continent, location
 # created by Russell on 3/25/21
 
 from covid_package.api.get_country_data import get_level_1_data
