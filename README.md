@@ -806,7 +806,7 @@ With corresponding attributes of continent and location:
 </tr>
 </table>
 
-There also exists a synthetic 'country' (International) as a catch-all bucket for cases that are not assignable to a specific country.
+There also exists a synthetic 'country' (International) as a catch-all bucket for cases that are not assignable to a specific country (e.g. cases contracted at sea).
 
 <table>
 <tr>
